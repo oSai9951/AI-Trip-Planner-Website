@@ -1,8 +1,7 @@
-// src/service/UnsplashApi.js
 
-const UNSPLASH_ACCESS_KEY = import.meta.env.VITE_UNSPLASH_API_KEY; // Replace with your key
+const UNSPLASH_ACCESS_KEY = import.meta.env.VITE_UNSPLASH_API_KEY; 
 
-// Generates a fallback random image URL with city or travel themes
+
 function getFallbackImage(city) {
   const cityQuery = encodeURIComponent(city || "travel");
   return `https://source.unsplash.com/random/800x600/?${cityQuery},city`;

@@ -31,7 +31,6 @@ const Hotels = ({ trip }) => {
           }
 
           try {
-            // Try to get Foursquare image
             if (lat && lng) {
               const fsq_id = await getPlaceId(hotel.name, lat, lng);
               if (fsq_id) {
@@ -39,13 +38,12 @@ const Hotels = ({ trip }) => {
               }
             }
 
-            // If Foursquare doesn't return anything, try Unsplash
             if (!imageUrl) {
               imageUrl = await getUnsplashImage(hotel.name);
             }
           } catch (error) {
             console.error("Error fetching image:", error);
-            imageUrl = await getUnsplashImage(hotel.name); // fallback in case of error
+            imageUrl = await getUnsplashImage(hotel.name);
           }
 
           return {

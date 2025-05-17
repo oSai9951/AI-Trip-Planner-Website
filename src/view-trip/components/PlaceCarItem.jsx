@@ -9,7 +9,6 @@ const PlaceCarItem = ({ activity }) => {
       className="border rounded-xl p-3 mt-1 flex gap-5
     hover:scale-105 transition-all hover:shadow-md "
     >
-      {/* Use activity.imageUrl if available */}
       <img
         src={
           activity.imageUrl ||

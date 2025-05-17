@@ -33,15 +33,12 @@ const PlacesToVisit = ({ trip }) => {
             }
 
             try {
-              // Try Foursquare image
               if (lat && lng) {
                 const fsq_id = await getPlaceId(activity.name, lat, lng);
                 if (fsq_id) {
                   imageUrl = await getPhotoUrl(fsq_id);
                 }
               }
-
-              // If Foursquare fails, use Unsplash
               if (!imageUrl) {
                 imageUrl = await getUnsplashImage(activity.name);
               }

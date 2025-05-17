@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UserTripCardItem from "./components/UserTripCardItem";
 
+
 const MyTrips = () => {
   const navigation = useNavigate();
 const [userTrips, setUserTrips] = useState([])
@@ -31,15 +32,16 @@ setUserTrips([])
 
     GetUserTrips();
   }, []);
-console.log(userTrips)
-  return <div className="sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mt-10">
+console.log("userTrips",userTrips)
+  return (<><div className="sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mt-10 pb-20">
     <h2 className="font-bold text-3xl">My trip & Search History</h2>
     <div className="grid grid-cols-2 mt-10 md:grid-cols-3 gap-5">
         {userTrips.map((trip, index)=>(
             <UserTripCardItem trip={trip} index={index}/>
         ))}
     </div>
-  </div>;
-};
+  </div>
+
+</>)};
 
 export default MyTrips;

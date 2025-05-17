@@ -8,7 +8,7 @@ export async function getPlaceId(name, latitude, longitude) {
   });
 
   const data = await response.json();
-  console.log("📍 Foursquare Search Response:", data); // Log full search result
+  console.log("📍 Foursquare Search Response:", data); 
 
   if (data.results && data.results.length > 0) {
     return data.results[0].fsq_id;
@@ -27,7 +27,7 @@ export async function getPhotoUrl(fsq_id) {
   );
 
   const photos = await res.json();
-  console.log("🖼️ Foursquare Photo Response:", photos); // Log photo info
+  console.log("🖼️ Foursquare Photo Response:", photos); 
 
   if (photos.length > 0) {
     return `${photos[0].prefix}original${photos[0].suffix}`;

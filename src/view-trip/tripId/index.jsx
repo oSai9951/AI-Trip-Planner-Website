@@ -10,6 +10,7 @@ import Footer from "../components/Footer";
 
 const ViewTrip = () => {
   const { tripId } = useParams();
+  console.log("tripId", tripId)
   const [trip, setTrip] = useState([]);
 
   useEffect(() => {
@@ -29,7 +30,7 @@ const ViewTrip = () => {
     tripId && GetTripData();
   }, [tripId]);
 
-  return (
+  return (<>
     <div className="p-10 md:px-20 lg:px-44 xl:px-56">
       {/* //information */}
       <InfoSection trip={trip} />
@@ -38,9 +39,9 @@ const ViewTrip = () => {
       {/* //daily plan */}
       <PlacesToVisit trip={trip} />
       {/* //footer */}
-      <Footer trip={trip} />
     </div>
-  );
+    <Footer/>
+ </> );
 };
 
 export default ViewTrip;
