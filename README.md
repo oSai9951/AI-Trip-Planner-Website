@@ -1,4 +1,4 @@
-# ✈🧳 Trip Planner
+# ✈🧳 AI Trip Planner
 
 Trip Planner is a smart travel planning application that helps users receive personalized recommendations for places to visit, hotel suggestions, and itinerary plans based on trip preferences like destination, budget, duration, and group size.
 
